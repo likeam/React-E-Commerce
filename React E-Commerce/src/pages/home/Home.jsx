@@ -19,7 +19,6 @@ const Home = () => {
      <ProductCard />
      <Track />
      <Testimonial />
-     <Footer />
     </Layout>
   )
 }
