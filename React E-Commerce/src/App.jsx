@@ -7,6 +7,7 @@ import NoPage from "./pages/nopage/NoPage";
 import MyState from "./context/data/myState";
 import Login from "./pages/registration/Login";
 import Signup from "./pages/registration/Signup";
+import ProductInfo from "./pages/productInfo/ProductInfo";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/nopage" element= {<NoPage />} />
           <Route path="/login" element= {<Login />} />
           <Route path="/signup" element= {<Signup />} />
+          <Route path="/productinfo" element= {<ProductInfo />} />
         </Routes>
       </Router>
     </MyState>
