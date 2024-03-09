@@ -9,7 +9,7 @@ const Filter = () => {
   return (
     <div>
          <div className=' container mx-auto px-4 mt-5 '>
-                <div className="p-5 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200"
+                <div className="p-5 rounded-lg bg-gray-200 drop-shadow-xl border border-gray-400"
                     style={{
                         backgroundColor: mode === 'dark' ? '#282c34' : '',
                         color: mode === 'dark' ? 'white' : '',
