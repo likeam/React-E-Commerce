@@ -1,27 +1,22 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import MyContext from "../../context/data/MyContext";
+import{FiSun} from 'react-icons/fi';
+import { BsFillCloudSunFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom'
+import { Dialog, Transition } from '@headlessui/react'
 
 
 const Navbar = () => {
 
-  const [mode, setMode] = useState('light');
+  const context = useContext(MyContext);
 
-  const toggleMode = () => {
-      if (mode === 'light') {
-          setMode('dark');
-          document.body.style.backgroundColor = 'rgb(17, 24, 39)';
-      }
-      else {
-          setMode('light');
-          document.body.style.backgroundColor = 'white';
-
-      }
-  }
+  const {mode, toggleMode} = context;
 
   return (
-  <div className="bg-white sticky top-0 z-50  "  >
-    <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-pink-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
-          Get free delivery on orders over ₹300
+  <div>
+       <header className="relative bg-white">
+        <p className="flex h-10 items-center justify-center bg-amber-500 px-4 text-sm font-medium text-white sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
+          Get free delivery on orders over RS. 500
         </p>
 
         <nav aria-label="Top" className="bg-gray-100 px-4 sm:px-6 lg:px-8 shadow-xl " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
@@ -43,7 +38,7 @@ const Navbar = () => {
               <div className="ml-4 flex lg:ml-0">
                 <Link to={'/'} className='flex'>
                   <div className="flex ">
-                    <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Bharat</h1>
+                    <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Punjab</h1>
                   </div>
                 </Link>
               </div>
@@ -69,19 +64,19 @@ const Navbar = () => {
                 <div className="hidden lg:ml-8 lg:flex">
                   <a href="#" className="flex items-center text-gray-700 ">
                     <img
-                      src="https://ecommerce-sk.vercel.app/img/indiaflag.png"
+                      src="https://img.freepik.com/free-vector/illustration-pakistan-flag_53876-27123.jpg?w=826&t=st=1709982359~exp=1709982959~hmac=4d9654d8e74a04106607e7ea0a25636b600eede439db15d78ace24e94fb12d2e"
                       alt=""
-                      className="block h-auto w-5 flex-shrink-0"
+                      className="block h-auto w-9 flex-shrink-0"
                     />
-                    <span className="ml-3 block text-sm font-medium" style={{ color: mode === 'dark' ? 'white' : '', }}>INDIA</span>
+                    <span className="ml-3 block text-sm font-medium" style={{ color: mode === 'dark' ? 'white' : '', }}>Pakistan</span>
                   </a>
                 </div>
                 <div className="hidden lg:ml-8 lg:flex">
                   <a href="#" className="flex items-center text-gray-700 ">
                     <img
                       className="inline-block w-10 h-10 rounded-full"
-                      src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-                      alt="Dan_Abromov" />
+                      src="https://avatars.githubusercontent.com/u/92205472?s=400&u=de0a401f183d592ab2bfccc7a9b55fe1581ed295&v=4"
+                      alt="Abdul Rehman" />
                   </a>
                 </div>
 
@@ -113,7 +108,7 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-    </div>
+  </div>
   )
 }
 
