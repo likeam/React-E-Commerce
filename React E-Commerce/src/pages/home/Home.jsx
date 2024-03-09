@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import Layout from '../../components/layout/Layout'
+import HeroSecton from '../../components/heroSection/HeroSecton'
 
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
   
   return (
     <Layout>
-     home
+     <HeroSecton />
     </Layout>
   )
 }
