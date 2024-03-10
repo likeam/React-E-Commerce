@@ -22,15 +22,15 @@ const DashboardTab = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className="tab container mx-auto ">
-          <Tabs defaultIndex={0} className=" ">
-            <TabList className="md:flex md:space-x-8 bg-  grid grid-cols-2 text-center gap-4   md:justify-center mb-10 ">
+        <div className="container mx-auto tab ">
+          <Tabs defaultIndex={0} className="">
+            <TabList className="grid grid-cols-2 gap-4 mb-10 text-center md:flex md:space-x-8 bg- md:justify-center ">
               <Tab>
                 <button
                   type="button"
                   className="font-medium border-b-2 hover:shadow-purple-700 border-purple-500 text-purple-500 rounded-lg text-xl shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]  px-5 py-1.5 text-center bg-[#605d5d12] "
                 >
-                  <div className="flex gap-2 items-center">
+                  <div className="flex items-center gap-2">
                     <MdOutlineProductionQuantityLimits />
                     Products
                   </div>{" "}
@@ -41,7 +41,7 @@ const DashboardTab = () => {
                   type="button"
                   className="font-medium border-b-2 border-pink-500 bg-[#605d5d12] text-pink-500  hover:shadow-pink-700  rounded-lg text-xl shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]    px-5 py-1.5 text-center "
                 >
-                  <div className="flex gap-2 items-center">
+                  <div className="flex items-center gap-2">
                     <AiFillShopping /> Order
                   </div>
                 </button>
@@ -51,7 +51,7 @@ const DashboardTab = () => {
                   type="button"
                   className="font-medium border-b-2 border-green-500 bg-[#605d5d12] text-green-500 rounded-lg text-xl  hover:shadow-green-700 shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]   px-5 py-1.5 text-center "
                 >
-                  <div className="flex gap-2 items-center">
+                  <div className="flex items-center gap-2">
                     <FaUser /> Users
                   </div>
                 </button>
@@ -59,14 +59,14 @@ const DashboardTab = () => {
             </TabList>
             {/* product  */}
             <TabPanel>
-              <div className="  px-4 md:px-0 mb-16">
+              <div className="px-4 mb-16  md:px-0">
                 <h1
-                  className=" text-center mb-5 text-3xl font-semibold underline"
+                  className="mb-5 text-3xl font-semibold text-center underline "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Product Details
                 </h1>
-                <div className=" flex justify-end">
+                <div className="flex justify-end ">
                   <button
                     type="button"
                     className="focus:outline-none text-white bg-pink-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] border hover:bg-pink-700 outline-0 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
@@ -76,13 +76,13 @@ const DashboardTab = () => {
                     }}
                   >
                     {" "}
-                    <div className="flex gap-2 items-center">
+                    <div className="flex items-center gap-2">
                       Add Product <FaCartPlus size={20} />
                     </div>
                   </button>
                 </div>
                 <div className="relative overflow-x-auto ">
-                  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400  ">
+                  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
                     <thead
                       className="text-xs border border-gray-600 text-black uppercase bg-gray-200 shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]"
                       style={{
@@ -116,7 +116,7 @@ const DashboardTab = () => {
                     </thead>
                     <tbody className="">
                       <tr
-                        className="bg-gray-50 border-b  dark:border-gray-700"
+                        className="border-b bg-gray-50 dark:border-gray-700"
                         style={{
                           backgroundColor:
                             mode === "dark" ? "rgb(46 49 55)" : "",
@@ -149,7 +149,7 @@ const DashboardTab = () => {
                           className="px-6 py-4 text-black "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          ₹100
+                          Rs. 100
                         </td>
                         <td
                           className="px-6 py-4 text-black "
@@ -164,9 +164,9 @@ const DashboardTab = () => {
                           12 Aug 2019
                         </td>
                         <td className="px-6 py-4">
-                          <div className=" flex gap-2">
+                          <div className="flex gap-2 ">
                             <div
-                              className=" flex gap-2 cursor-pointer text-black "
+                              className="flex gap-2 text-black cursor-pointer "
                               style={{ color: mode === "dark" ? "white" : "" }}
                             >
                               <div>
@@ -212,9 +212,9 @@ const DashboardTab = () => {
             </TabPanel>
             <TabPanel>
               {/* <Order order={order} setOrder={setOrder} setLoading={setLoading} /> */}
-              <div className="relative overflow-x-auto mb-16">
+              <div className="relative mb-16 overflow-x-auto">
                 <h1
-                  className=" text-center mb-5 text-3xl font-semibold underline"
+                  className="mb-5 text-3xl font-semibold text-center underline "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Order Details
@@ -265,7 +265,7 @@ const DashboardTab = () => {
                   </thead>
                   <tbody>
                     <tr
-                      className="bg-gray-50 border-b  dark:border-gray-700"
+                      className="border-b bg-gray-50 dark:border-gray-700"
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                         color: mode === "dark" ? "white" : "",
@@ -297,7 +297,7 @@ const DashboardTab = () => {
                         className="px-6 py-4 text-black "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        ₹100
+                        Rs. 100
                       </td>
                       <td
                         className="px-6 py-4 text-black "
@@ -349,9 +349,9 @@ const DashboardTab = () => {
             </TabPanel>
             <TabPanel>
               {/* <User addressInfo={addressInfo} setAddressInfo={setAddressInfo} setLoading={setLoading} /> */}
-              <div className="relative overflow-x-auto mb-10">
+              <div className="relative mb-10 overflow-x-auto">
                 <h1
-                  className=" text-center mb-5 text-3xl font-semibold underline"
+                  className="mb-5 text-3xl font-semibold text-center underline "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   User Details
@@ -391,7 +391,7 @@ const DashboardTab = () => {
                   </thead>
                   <tbody>
                     <tr
-                      className="bg-gray-50 border-b  dark:border-gray-700"
+                      className="border-b bg-gray-50 dark:border-gray-700"
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                         color: mode === "dark" ? "white" : "",
