@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
+import Loader from "../../components/loader/Loader";
 
 
 const Signup = () => {
@@ -14,6 +15,7 @@ const Signup = () => {
   const [email, setEmail] =useState('');
 
   const context = useContext(MyContext);
+
 
   const {loading, setLoading} = context;
 
@@ -43,8 +45,9 @@ const Signup = () => {
       setLoading(false)
       
 
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+     
+      toast.error("Fail to SignIn");
       setLoading(false)
     }
   }
@@ -53,6 +56,7 @@ const Signup = () => {
   return (
     <div>
       <div className="flex items-center justify-center h-screen ">
+      {loading && <Loader />}
         <div className="px-10 py-10 bg-gray-800 rounded-xl">
           <div className="">
           
