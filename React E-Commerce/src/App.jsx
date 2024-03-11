@@ -10,24 +10,27 @@ import Signup from "./pages/registration/Signup";
 import ProductInfo from "./pages/productInfo/ProductInfo";
 import AddProduct from "./pages/admin/dashboard/pages/AddProduct";
 import UpdateProduct from "./pages/admin/dashboard/pages/UpdateProduct";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
-    <MyState >
+    <MyState>
       <Router>
         <Routes>
-          <Route path="/" element= {<Home />} />
-          <Route path="/order" element= {<Order />} />
-          <Route path="/cart" element= {<Cart />} />
-          <Route path="/dashboard" element= {<Dashboard />} />
-          <Route path="/nopage" element= {<NoPage />} />
-          <Route path="/login" element= {<Login />} />
-          <Route path="/signup" element= {<Signup />} />
-          <Route path="/productinfo" element= {<ProductInfo />} />
-          <Route path="/addproduct" element= {<AddProduct />} />
-          <Route path="/updateProduct" element= {<UpdateProduct />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/nopage" element={<NoPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/productinfo" element={<ProductInfo />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/updateProduct" element={<UpdateProduct />} />
         </Routes>
+        <ToastContainer />
       </Router>
     </MyState>
-  )
+  );
 }
