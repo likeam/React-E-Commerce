@@ -4,13 +4,14 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { FaUser, FaCartPlus } from 'react-icons/fa';
 import { AiFillShopping, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 const DashboardTab = () => {
 
     const context = useContext(MyContext);
-    const { mode, product } = context
+    const { mode, product, editHandle, deleteProduct } = context
 
-    console.log(product);
+    
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -180,7 +181,7 @@ const DashboardTab = () => {
                               className="flex gap-2 text-black cursor-pointer "
                               style={{ color: mode === "dark" ? "white" : "" }}
                             >
-                              <div>
+                              <div onClick={() => deleteProduct(item)}>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -196,7 +197,8 @@ const DashboardTab = () => {
                                   />
                                 </svg>
                               </div>
-                              <div>
+                             <Link to={'/updateproduct'} onClick={() =>  editHandle(item)}>
+                             <div >
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -212,6 +214,7 @@ const DashboardTab = () => {
                                   />
                                 </svg>
                               </div>
+                             </Link>
                             </div>
                           </div>
                         </td>

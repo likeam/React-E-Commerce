@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MyContext from './MyContext';
-import {  Timestamp, addDoc, collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import {  Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
 import { fireDB } from '../../firebase/FirebaseConfig';
 import { toast } from 'react-toastify';
 
@@ -94,9 +94,48 @@ function MyState(props) {
     }, []);
 
 
-   
+    const editHandle = (item) => {
+      setProducts(item)
+    }
+
+    const updateProduct = async (item) => {
+      setLoading(true)
+
+      try {
+        
+        await setDoc(doc(fireDB, "products", products.id), products);
+        toast.success("Product Updated Sucessfuly")
+        gerProductData();
+        setLoading(false)
+        window.location.href = '/dashboard'
+
+      } catch (error) {
+        setLoading(false);
+        console.log(error)
+        
+      }
+      setProducts("")
+    }
+
+
+    const deleteProduct = async (item) => {
+      try {
+        setLoading(true);
+        await deleteDoc(doc(fireDB, "products", item.id));
+        toast.success("Product Deleted Sucessfully")
+        setLoading(false);
+        getProductData()
+      } catch (error) {
+        setLoading(false)
+        console.log(error)
+        
+      }
+    }
+
+
+
   return (
-    <MyContext.Provider value={{mode, toggleMode, loading, setLoading,  products, setProducts, addProcuct, product}}>
+    <MyContext.Provider value={{mode, toggleMode, loading, setLoading,  products, setProducts, addProcuct, product,  editHandle, updateProduct,deleteProduct}}>
        {props.children}
     </MyContext.Provider>
   )
