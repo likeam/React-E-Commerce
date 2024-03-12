@@ -13,7 +13,7 @@ const Navbar = () => {
   const { mode, toggleMode } = context;
 
   const user = JSON.parse(localStorage.getItem('user'))
-  console.log(user)
+ 
 
   const logout = () => {
     localStorage.clear('user')
