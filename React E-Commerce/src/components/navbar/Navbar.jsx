@@ -1,10 +1,11 @@
-import { useContext, useState, Fragment } from "react";
+import { useContext, useState, Fragment, useEffect } from "react";
 import MyContext from "../../context/data/MyContext";
 import { FiSun } from "react-icons/fi";
 import { BsFillCloudSunFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import { RxCross2 } from 'react-icons/rx'
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,6 +20,14 @@ const Navbar = () => {
     localStorage.clear('user')
     window.location.href = "/"
   }
+
+  const cartItems = useSelector((state) => state.cart);
+
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+}, [cartItems])
+
 
   return (
     <div className="sticky top-0 z-50 bg-white ">
@@ -301,7 +310,7 @@ const Navbar = () => {
                       className="ml-2 text-sm font-medium text-gray-700 group-"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      0
+                      {cartItems.length}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
