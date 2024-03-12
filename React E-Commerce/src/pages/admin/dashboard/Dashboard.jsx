@@ -9,12 +9,14 @@ const Dashboard = () => {
 
   const { mode } = context;
 
+  
+
   return (
     <Layout>
-      <section className="text-gray-600 body-font mt-10 mb-10">
+      <section className="mt-10 mb-10 text-gray-600 body-font">
         <div className="container px-5 mx-auto mb-10">
           <div className="flex flex-wrap -m-4 text-center">
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className="w-full p-4 md:w-1/4 sm:w-1/2">
               <div
                 className=" border-2 hover:shadow-purple-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-gray-100 border-gray-300    px-4 py-3 rounded-xl"
                 style={{
@@ -23,26 +25,26 @@ const Dashboard = () => {
                 }}
               >
                 <div
-                  className="text-purple-500 w-12 h-12 mb-3 inline-block"
+                  className="inline-block w-12 h-12 mb-3 text-purple-500"
                   viewBox="0 0 24 24"
                 >
                   <FaUserTie size={50} />
                 </div>
                 <h2
-                  className="title-font font-medium text-3xl text-black fonts1"
+                  className="text-3xl font-medium text-black title-font fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   10
                 </h2>
                 <p
-                  className=" text-purple-500  font-bold"
+                  className="font-bold text-purple-500 "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Total Products
                 </p>
               </div>
             </div>
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className="w-full p-4 md:w-1/4 sm:w-1/2">
               <div
                 className=" border-2 hover:shadow-purple-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-gray-100 border-gray-300    px-4 py-3 rounded-xl"
                 style={{
@@ -51,26 +53,26 @@ const Dashboard = () => {
                 }}
               >
                 <div
-                  className="text-purple-500 w-12 h-12 mb-3 inline-block"
+                  className="inline-block w-12 h-12 mb-3 text-purple-500"
                   viewBox="0 0 24 24"
                 >
                   <FaUserTie size={50} />
                 </div>
                 <h2
-                  className="title-font font-medium text-3xl text-black fonts1"
+                  className="text-3xl font-medium text-black title-font fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   10
                 </h2>
                 <p
-                  className=" text-purple-500  font-bold"
+                  className="font-bold text-purple-500 "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Total Orders
                 </p>
               </div>
             </div>
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className="w-full p-4 md:w-1/4 sm:w-1/2">
               <div
                 className=" border-2 hover:shadow-purple-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-gray-100 border-gray-300    px-4 py-3 rounded-xl"
                 style={{
@@ -79,26 +81,26 @@ const Dashboard = () => {
                 }}
               >
                 <div
-                  className="text-purple-500 w-12 h-12 mb-3 inline-block"
+                  className="inline-block w-12 h-12 mb-3 text-purple-500"
                   viewBox="0 0 24 24"
                 >
                   <FaUserTie size={50} />
                 </div>
                 <h2
-                  className="title-font font-medium text-3xl text-black fonts1"
+                  className="text-3xl font-medium text-black title-font fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   20
                 </h2>
                 <p
-                  className=" text-purple-500  font-bold"
+                  className="font-bold text-purple-500 "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Total Users
                 </p>
               </div>
             </div>
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className="w-full p-4 md:w-1/4 sm:w-1/2">
               <div
                 className=" border-2 hover:shadow-purple-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-gray-100 border-gray-300    px-4 py-3 rounded-xl"
                 style={{
@@ -107,19 +109,19 @@ const Dashboard = () => {
                 }}
               >
                 <div
-                  className="text-purple-500 w-12 h-12 mb-3 inline-block"
+                  className="inline-block w-12 h-12 mb-3 text-purple-500"
                   viewBox="0 0 24 24"
                 >
                   <FaUserTie size={50} />
                 </div>
                 <h2
-                  className="title-font font-medium text-3xl text-black fonts1"
+                  className="text-3xl font-medium text-black title-font fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   20
                 </h2>
                 <p
-                  className=" text-purple-500  font-bold"
+                  className="font-bold text-purple-500 "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Total Products

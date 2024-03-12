@@ -47,6 +47,9 @@ function MyState(props) {
         
         await addDoc(poductRef, products)
         toast.success("Product Add Successfully")
+        setTimeout(() =>{
+          window.location.href = '/dashboard'
+        }, 800)
         gerProductData()
         closeModal()
         setLoading(false)

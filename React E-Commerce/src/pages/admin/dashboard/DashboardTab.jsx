@@ -17,6 +17,11 @@ const DashboardTab = () => {
 
     function openModal() {
         setIsOpen(true)
+
+    }
+
+    const add = () => {
+      window.location.href ='/addproduct'
     }
 
   return (
@@ -59,7 +64,7 @@ const DashboardTab = () => {
             </TabList>
             {/* product  */}
             <TabPanel>
-              <div className="px-4 mb-16  md:px-0">
+              <div className="px-4 mb-16 md:px-0">
                 <h1
                   className="mb-5 text-3xl font-semibold text-center underline "
                   style={{ color: mode === "dark" ? "white" : "" }}
@@ -68,6 +73,7 @@ const DashboardTab = () => {
                 </h1>
                 <div className="flex justify-end ">
                   <button
+                    onClick={add}
                     type="button"
                     className="focus:outline-none text-white bg-pink-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] border hover:bg-pink-700 outline-0 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
                     style={{
