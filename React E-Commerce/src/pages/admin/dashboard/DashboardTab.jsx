@@ -8,7 +8,9 @@ import { AiFillShopping, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai';
 const DashboardTab = () => {
 
     const context = useContext(MyContext);
-    const { mode } = context
+    const { mode, product } = context
+
+    console.log(product);
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -120,7 +122,10 @@ const DashboardTab = () => {
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="">
+                    {product.map((item, index) =>{
+                      const {title, price, imageUrl, category, date} = item;
+                      return(
+                        <tbody className="">
                       <tr
                         className="border-b bg-gray-50 dark:border-gray-700"
                         style={{
@@ -133,7 +138,7 @@ const DashboardTab = () => {
                           className="px-6 py-4 text-black "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          1.
+                          {index +1}
                         </td>
                         <th
                           scope="row"
@@ -141,7 +146,7 @@ const DashboardTab = () => {
                         >
                           <img
                             className="w-16"
-                            src="https://dummyimage.com/720x400"
+                            src={imageUrl}
                             alt="img"
                           />
                         </th>
@@ -149,25 +154,25 @@ const DashboardTab = () => {
                           className="px-6 py-4 text-black "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          Title
+                          {title}
                         </td>
                         <td
                           className="px-6 py-4 text-black "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          Rs. 100
+                          Rs. {price}
                         </td>
                         <td
                           className="px-6 py-4 text-black "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          pots
+                          {category}
                         </td>
                         <td
                           className="px-6 py-4 text-black "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          12 Aug 2019
+                          {date}
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex gap-2 ">
@@ -212,6 +217,8 @@ const DashboardTab = () => {
                         </td>
                       </tr>
                     </tbody>
+                      )
+                    })}
                   </table>
                 </div>
               </div>

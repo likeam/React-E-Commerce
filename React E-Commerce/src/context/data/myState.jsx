@@ -96,7 +96,7 @@ function MyState(props) {
 
    
   return (
-    <MyContext.Provider value={{mode, toggleMode, loading, setLoading,  products, setProducts, addProcuct }}>
+    <MyContext.Provider value={{mode, toggleMode, loading, setLoading,  products, setProducts, addProcuct, product}}>
        {props.children}
     </MyContext.Provider>
   )
