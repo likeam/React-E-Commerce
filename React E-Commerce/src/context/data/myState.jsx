@@ -15,16 +15,16 @@ import { fireDB } from "../../firebase/FirebaseConfig";
 import { toast } from "react-toastify";
 
 function MyState(props) {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState('light');
 
   const [loading, setLoading] = useState(false);
 
   const toggleMode = () => {
-    if (mode === "light") {
-      setMode("dark");
+    if (mode === 'light') {
+      setMode('dark');
       document.body.style.backgroundColor = "rgb(17, 24, 39)";
     } else {
-      setMode("light");
+      setMode('light');
       document.body.style.backgroundColor = "white";
     }
   };
@@ -71,7 +71,7 @@ function MyState(props) {
     setProducts("");
   };
 
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([])
 
   const getProductData = async () => {
     setLoading(true);
@@ -93,9 +93,7 @@ function MyState(props) {
     }
   };
 
-  useEffect(() => {
-    getProductData();
-  }, []);
+  
 
   const editHandle = (item) => {
     setProducts(item);
@@ -132,6 +130,35 @@ function MyState(props) {
     }
   };
 
+  const [order, setOrder] = useState([]);
+
+  const getOrderData = async () => {
+    setLoading(true)
+    try {
+      const result = await getDocs(collection(fireDB, "orders"))
+      const ordersArray = [];
+      result.forEach((doc) => {
+        ordersArray.push(doc.data());
+        setLoading(false)
+      });
+      setOrder(ordersArray);
+      console.log(ordersArray)
+      setLoading(false);
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+  const [searchkey, setSearchkey] = useState('')
+  const [filterType, setFilterType] = useState('')
+  const [filterPrice, setFilterPrice] = useState('')
+
+  useEffect(() => {
+    getProductData();
+    getOrderData();
+  }, []);
+
+
   return (
     <MyContext.Provider
       value={{
@@ -146,6 +173,13 @@ function MyState(props) {
         editHandle,
         updateProduct,
         deleteProduct,
+        order,
+        searchkey,
+        setSearchkey,
+        filterType,
+        setFilterType,
+        filterPrice, 
+        setFilterPrice
       }}
     >
       {props.children}

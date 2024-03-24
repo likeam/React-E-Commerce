@@ -332,7 +332,7 @@ const DashboardTab = () => {
                         className="px-6 py-4 text-black "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        india
+                        Pakistan
                       </td>
                       <td
                         className="px-6 py-4 text-black "
@@ -344,19 +344,20 @@ const DashboardTab = () => {
                         className="px-6 py-4 text-black "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        929929929929
+                       +9130066445599
                       </td>
                       <td
                         className="px-6 py-4 text-black "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        kkakka@gmail.com
+                        
+                        argd@gmail.com
                       </td>
                       <td
                         className="px-6 py-4 text-black "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        12 Aug 2019
+                        12 April 2024
                       </td>
                     </tr>
                   </tbody>
